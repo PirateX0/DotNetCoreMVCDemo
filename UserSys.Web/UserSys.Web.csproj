@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CoreCompat.System.Drawing.v2" Version="5.2.0-preview1-r131" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\UserSys.Commons\UserSys.Commons.csproj" />
+    <ProjectReference Include="..\UserSys.DTOs\UserSys.DTOs.csproj" />
+    <ProjectReference Include="..\UserSys.IServices\UserSys.IServices.csproj" />
+    <ProjectReference Include="..\UserSys.Services\UserSys.Services.csproj" />
+  </ItemGroup>
+
+</Project>

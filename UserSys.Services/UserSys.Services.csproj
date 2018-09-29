@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\UserSys.Commons\UserSys.Commons.csproj" />
+    <ProjectReference Include="..\UserSys.DTOs\UserSys.DTOs.csproj" />
+    <ProjectReference Include="..\UserSys.IServices\UserSys.IServices.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.0.0" />
+    <PackageReference Include="RuPeng.EFCore.Ext" Version="1.0.0" />
+  </ItemGroup>
+
+</Project>

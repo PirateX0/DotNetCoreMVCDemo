@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "登录";
+}
+<form id="formLogin">
+    手机号：<input type="tel" name="phoneNum"/>密码：<input type="password" name="password"/>验证码：<input type="text" name="captcha"/><img id="imgCaptcha"/>
+    <input type="button" id="btnLogin" value="登录"/>
+</form>
+<a href="~/Home/Register">注册</a>
+@section Scripts
+{
+    <script type="text/javascript">
+        $(function () {
+            $("#imgCaptcha").click(function () {
+                $(this).attr("src", "/Home/CreateCaptCha?ts=" + Math.random());
+            }).click();
+            $("#btnLogin").click(function () {
+                var data = $("#formLogin").serializeArray();
+                $.ajax({
+                    url: "/Home/Login", type: "post", dataType: "json",
+                    data: data,
+                    success: function (res)
+                    {
+                        if (res.status == "ok")
+                        {
+                            alert("登录成功");
+                        }
+                        else
+                        {
+                            alert(res.msg);
+                        }
+                        $("#imgCaptcha").click();
+                    },
+                    error: function ()
+                    {
+                        alert("登录网络错误");
+                        $("#imgCaptcha").click();
+                    }
+                });
+            });
+        });
+    </script>
+}
